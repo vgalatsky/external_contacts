@@ -1,1 +1,2 @@
-# external_contacts
+# contacts
+external contacts AngularJS Sample

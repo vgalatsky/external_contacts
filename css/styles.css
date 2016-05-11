@@ -1,0 +1,129 @@
+.editable-table > tbody > tr > td {
+    padding: 4px
+}
+.editable-text {
+    padding-left: 4px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    display: inline-block;
+}
+.editable-table tbody > tr > td > .controls {
+//width: 100%
+}
+.editable-input {
+    padding-left: 3px;
+}
+.editable-input.input-sm {
+    height: 30px;
+    font-size: 14px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+
+
+
+.rrr {
+
+    width: 80%;
+    max-width: 80%;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+
+
+
+}
+
+
+.pure-table thead {
+    background-color: #ffffff;
+    color: #4ba9df;
+    /* text-align: left; */
+    vertical-align: bottom;
+    border: 1px solid #ddd;
+}
+
+
+.table-bordered {
+    border: 0px solid #ddd;
+}
+
+
+body{
+
+    padding: 0 2em;
+}
+
+table {
+    border-spacing: -4px !important;
+}
+
+.pure-table td {
+    padding: 0.9em 1.5em;
+    color:#828282;
+}
+
+
+.pure-table th{
+    padding: 1.9em 1.5em
+}
+
+
+* {
+    font-family: 'Verdana';
+    font-weight: normal;
+    font-size: 13px;
+}
+
+div.centre
+{
+    width: 200px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.move-rigth{
+    display: block;
+    float: right;
+}
+
+.table-striped>tbody>tr:nth-of-type(odd) {
+    background-color: #f6f6f6;
+}
+
+
+h1 {
+    font-size: 2em;
+    margin: .67em -4em;
+    color: #4ba9df;
+}
+
+/*
+input[type="checkbox"]{
+ -ms-transform: scale(2);
+ -moz-transform: scale(2);
+ -webkit-transform: scale(2);
+ -o-transform: scale(2);
+  padding: 10px;
+}
+*/
+
+
+.custSpan{
+    font-size: 1em;
+    margin: .67em -8em;
+    color: #828282;
+}
+
+.collapse {
+    margin: 3em -4em;
+}
+
+button.space{
+    margin: 13px 12px 12px 10px;
+}

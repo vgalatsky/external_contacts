@@ -1,0 +1,171 @@
+<html>
+
+<head>
+    <script src="lib/js/jquery.min.js"></script>
+    <script src="lib/js/angular.min.js"></script>
+    <script src="lib/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="lib/css/bootstrap.min.css">
+    <link rel="stylesheet" href="lib/css/pure-min.css" />
+
+    <link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<body ng-app="ExternalContacts" ng-controller="contacts">
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <h1>External Contacts</h1>
+            <span class="custSpan">Select the client contacts associated with this offer</span>
+            <p class="custSpan"> &nbsp</p>
+        </div>
+        <div class="col-md-6 text-right">
+            <div class="col-sm-10" style="margin: 3em -10em;">
+                <button type="button" ng-model="collapsed" class="btn btn-default btn-sm" ng-click="collapsed=!collapsed"><i class="glyphicon"></i>__</button>
+                <a href="#" ng-model="collapsed" ng-click="collapsed=!collapsed" style="color:#828282; font-size: 16px">Collapse</a>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div ng-hide="collapsed">
+
+    <table class="rrr table-striped   pure-table rrr">
+        <thead>
+
+
+        <tr style="height: 80px;">
+            <th></th>
+            <th>Type</th>
+            <th>Name</th>
+            <th>Title</th>
+            <th>Phone</th>
+            <th>Ext.</th>
+            <th>Fax</th>
+            <th>Email</th>
+            <th></th>
+        </tr>
+
+
+        </thead>
+        <tbody>
+        <tr ng-repeat="user in userList track by $index">
+            <td style="width:1px" ;>
+                <input type="checkbox" ng-model="userObject.checked">
+            </td>
+            <td style="width:100px">
+                {{user.type}}
+            </td>
+            <td>{{user.name}}</td>
+            <td>{{user.title}}</td>
+            <td>{{user.phone}}</td>
+            <td>{{user.ext}}</td>
+            <td>{{user.fax}}</td>
+            <td>{{user.email}}</td>
+            <td style="width:130px;">
+                <div class="btn-group">
+                    <button type="button" class="btn btn-default btn" ng-click="edit($index);"><i class="glyphicon glyphicon-pencil"></i>
+                    </button>
+                    <button type="button" class="btn btn-default btn" ng-click="delete($index);"><i class="glyphicon glyphicon-trash"></i>
+                    </button>
+                </div>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div style="margin: 0 -9em;">
+                    <button type="button" class="btn btn-default pull-left btn-lg" ng-click="create();"><i class="glyphicon glyphicon"></i>Create New</button>
+                </div>
+            </div>
+            <div class="col-md-6 text-right">
+
+
+                <div id="editview" style="width: 337px;display:none;" class="centre">
+                    <form class="form-horizontal" role="form">
+
+                        <div class="form-group">
+                            <label for="type" class="col-sm-2 control-label">Type</label>
+                            <div class="col-sm-10">
+                                <input type="test" class="form-control" id="type" placeholder="type: Executive, Daily, Other, etc." ng-model="userObject.type" />
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="name" class="col-sm-2 control-label">Name</label>
+                            <div class="col-sm-10">
+                                <input type="test" class="form-control" id="name" placeholder="The name for your contact" ng-model="userObject.name" />
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="title" class="col-sm-2 control-label">Title</label>
+                            <div class="col-sm-10">
+                                <input type="test" class="form-control" id="title" placeholder="Example: CEO" ng-model="userObject.title" />
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone" class="col-sm-2 control-label">Phone</label>
+                            <div class="col-sm-10">
+                                <input type="test" class="form-control" id="phone" placeholder="Contact's phone number" ng-model="userObject.phone" />
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="ext" class="col-sm-2 control-label">Ext</label>
+                            <div class="col-sm-10">
+                                <input type="test" class="form-control" id="ext" placeholder="Phone's extention" ng-model="userObject.ext" />
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="fax" class="col-sm-2 control-label">Fax</label>
+                            <div class="col-sm-10">
+                                <input type="test" class="form-control" id="fax" placeholder="Contact's fax number" ng-model="userObject.fax" />
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="email" class="col-sm-2 control-label">Email</label>
+                            <div class="col-sm-10">
+                                <input type="test" class="form-control" id="email" placeholder="Contact's email address" ng-model="userObject.email" />
+                            </div>
+                        </div>
+
+
+                        <input type="hidden" ng-model="$scope.objectIndex" class="ng-valid">
+
+                        <button type="button" class="btn btn btn-success pull-right space" ng-click="save();"><i class="glyphicon glyphicon"></i>Save</button>
+
+                        <div> </div>
+                        <button type="button" class="btn btn-default pull-right space" ng-click="cancel();"><i class="glyphicon glyphicon"></i>Cancel</button>
+
+
+
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="js/app.js"></script>
+<script src="js/controllers/contacts.js"></script>
+
+</body>
+
+</html>
